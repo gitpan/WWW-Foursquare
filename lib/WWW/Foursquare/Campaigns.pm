@@ -3,6 +3,8 @@ package WWW::Foursquare::Campaigns;
 use strict;
 use warnings;
 
+our $VERSION = '0.9902';
+
 sub new {
     my ($class, $request, $campaign_id) = @_;
 

@@ -1,4 +1,9 @@
 Revision history for WWW-Foursquare
 
-0.9901    20.11.2012 02:50
+0.9902  20.11.2012 23:30
+        Add git repository to module page
+        Update PREREQ_PM (add LWP::protocols::https)
+        Update documentation and example script
+
+0.9901  20.11.2012 02:50
         First version.

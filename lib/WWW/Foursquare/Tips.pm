@@ -3,6 +3,8 @@ package WWW::Foursquare::Tips;
 use strict;
 use warnings;
 
+our $VERSION = '0.9902';
+
 sub new {
     my ($class, $request, $tip_id) = @_;
 

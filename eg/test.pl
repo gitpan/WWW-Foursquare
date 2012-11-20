@@ -1,4 +1,4 @@
-#!perl
+#!/usr/bin/env perl
 
 use v5.16;
 use WWW::Foursquare;
@@ -39,11 +39,10 @@ say;
 say "[search people]";
 my $search = $fs->users()->search(name => 'Vlasov');
 
-USER:
 for my $user (@{$search->{results}}) {
 
     # pass blank avatars
-    next USER if $user->{photo}->{suffix} =~ /blank/;
+    next if $user->{photo}->{suffix} =~ /blank/;
 
     my $photo   = $user->{photo}->{prefix} . $user->{photo}->{suffix};
     my $user_id = $user->{id};

@@ -18,9 +18,15 @@ WriteMakefile(
         'Test::More' => 0,
     },
     PREREQ_PM => {
-        'JSON' => 2,
-        'URI'  => 1, 
-        'LWP'  => 6,
+        'JSON'                 => 2.50,
+        'URI'                  => 0, 
+        'LWP'                  => 6.01,
+        'LWP::Protocol::https' => 0,
+    },
+    META_MERGE => {
+        resources => {
+            repository => 'https://github.com/fxzuz/WWW-Foursquare',
+        },
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'WWW-Foursquare-*' },

@@ -3,7 +3,8 @@ NAME
 
 DESCRIPTION
     This wrapper help you send requests to Foursquare API and get result in easy way, OAuth is supported, quick integration with your current project.
-    You can get more information about Foursquare API here: https://developer.foursquare.com/ 
+    You can get more information about Foursquare API here: 
+    https://developer.foursquare.com/ 
 
 
 SYNOPSIS
@@ -140,6 +141,10 @@ METHODS
 
     pageupdates
       All venues methods: https://developer.foursquare.com/docs/pageupdates/pageupdates
+
+EXAMPLES
+    You can see examples how to use WWW::Foursquare. 
+    Here: /eg/test.pl
 
 AUTHOR
     Pavel Vlasov, fxzuz at cpan.org

@@ -32,13 +32,19 @@
       },
       "runtime" : {
          "requires" : {
-            "JSON" : "2",
-            "LWP" : "6",
-            "URI" : "1",
+            "JSON" : "2.5",
+            "LWP" : "6.01",
+            "LWP::Protocol::https" : 0,
+            "URI" : 0,
             "perl" : "5.006"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.9901"
+   "resources" : {
+      "repository" : {
+         "url" : "https://github.com/fxzuz/WWW-Foursquare"
+      }
+   },
+   "version" : "0.9902"
 }
