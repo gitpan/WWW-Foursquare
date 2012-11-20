@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings FATAL => 'all';
 
-our $VERSION = '0.0001';
+our $VERSION = '0.9901';
 
 use WWW::Foursquare::Config;
 use WWW::Foursquare::Request;
@@ -198,7 +198,7 @@ WWW::Foursquare - is a Perl wrapper for the Foursqauare API.
 
 =head1 VERSION
 
-This document describes WWW::Foursquare version 0.0001
+This document describes WWW::Foursquare version 0.9901
 
 =cut
 
