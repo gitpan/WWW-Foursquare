@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings FATAL => 'all';
 
-our $VERSION = '0.9902';
+our $VERSION = '0.9903';
 
 use WWW::Foursquare::Config;
 use WWW::Foursquare::Request;
@@ -198,7 +198,7 @@ WWW::Foursquare - is a Perl wrapper for the Foursqauare API.
 
 =head1 VERSION
 
-This document describes WWW::Foursquare version 0.9902
+This document describes WWW::Foursquare version 0.9903
 
 =cut
 
@@ -313,51 +313,51 @@ Set access token for foursquare object
 
 =head2 venuegroups
 
-    All venues methods: https://developer.foursquare.com/docs/venuegroups/venuegroups
+    All venuegroups methods: https://developer.foursquare.com/docs/venuegroups/venuegroups
 
 =head2 checkins
 
-    All venues methods: https://developer.foursquare.com/docs/checkins/checkins
+    All checkins methods: https://developer.foursquare.com/docs/checkins/checkins
 
 =head2 tips
 
-    All venues methods: https://developer.foursquare.com/docs/tips/tips
+    All tips methods: https://developer.foursquare.com/docs/tips/tips
 
 =head2 lists
 
-    All venues methods: https://developer.foursquare.com/docs/lists/lists
+    All lists methods: https://developer.foursquare.com/docs/lists/lists
 
 =head2 updates
 
-    All venues methods: https://developer.foursquare.com/docs/updates/updates
+    All updates methods: https://developer.foursquare.com/docs/updates/updates
 
 =head2 photos
 
-    All venues methods: https://developer.foursquare.com/docs/photos/photos
+    All photos methods: https://developer.foursquare.com/docs/photos/photos
 
 =head2 settings
     
-    All venues methods: https://developer.foursquare.com/docs/settings/settings
+    All settings methods: https://developer.foursquare.com/docs/settings/settings
 
 =head2 specials
     
-    All venues methods: https://developer.foursquare.com/docs/specials/specials
+    All specials methods: https://developer.foursquare.com/docs/specials/specials
 
 =head2 campaigns
 
-    All venues methods: https://developer.foursquare.com/docs/campaigns/campaigns
+    All campaigns methods: https://developer.foursquare.com/docs/campaigns/campaigns
 
 =head2 events
 
-    All venues methods: https://developer.foursquare.com/docs/events/events
+    All events methods: https://developer.foursquare.com/docs/events/events
 
 =head2 pages
 
-    All venues methods: https://developer.foursquare.com/docs/pages/pages
+    All pages methods: https://developer.foursquare.com/docs/pages/pages
 
 =head2 pageupdates
 
-    All venues methods: https://developer.foursquare.com/docs/pageupdates/pageupdates
+    All pageupdates methods: https://developer.foursquare.com/docs/pageupdates/pageupdates
 
 =head1 EXAMPLES
 

@@ -107,40 +107,40 @@ METHODS
       All venues methods: https://developer.foursquare.com/docs/venues/venues
 
     venuegroups
-      All venues methods: https://developer.foursquare.com/docs/venuegroups/venuegroups
+      All venuegroups methods: https://developer.foursquare.com/docs/venuegroups/venuegroups
 
     checkins
-      All venues methods: https://developer.foursquare.com/docs/checkins/checkins
+      All checkins methods: https://developer.foursquare.com/docs/checkins/checkins
 
     tips
-      All venues methods: https://developer.foursquare.com/docs/tips/tips
+      All tips methods: https://developer.foursquare.com/docs/tips/tips
 
     lists
-      All venues methods: https://developer.foursquare.com/docs/lists/lists
+      All lists methods: https://developer.foursquare.com/docs/lists/lists
 
     updates
-      All venues methods: https://developer.foursquare.com/docs/updates/updates
+      All updates methods: https://developer.foursquare.com/docs/updates/updates
 
     photos
-      All venues methods: https://developer.foursquare.com/docs/photos/photos
+      All photos methods: https://developer.foursquare.com/docs/photos/photos
 
     settings
-      All venues methods: https://developer.foursquare.com/docs/settings/settings
+      All settings methods: https://developer.foursquare.com/docs/settings/settings
 
     specials
-      All venues methods: https://developer.foursquare.com/docs/specials/specials
+      All specials methods: https://developer.foursquare.com/docs/specials/specials
 
     campaigns
-      All venues methods: https://developer.foursquare.com/docs/campaigns/campaigns
+      All campaigns methods: https://developer.foursquare.com/docs/campaigns/campaigns
 
     events
-      All venues methods: https://developer.foursquare.com/docs/events/events
+      All events methods: https://developer.foursquare.com/docs/events/events
 
     pages
-      All venues methods: https://developer.foursquare.com/docs/pages/pages
+      All pages methods: https://developer.foursquare.com/docs/pages/pages
 
     pageupdates
-      All venues methods: https://developer.foursquare.com/docs/pageupdates/pageupdates
+      All pageupdates methods: https://developer.foursquare.com/docs/pageupdates/pageupdates
 
 EXAMPLES
     You can see examples how to use WWW::Foursquare. 

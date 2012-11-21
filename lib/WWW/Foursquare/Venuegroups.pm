@@ -3,8 +3,6 @@ package WWW::Foursquare::Venuegroups;
 use strict;
 use warnings;
 
-our $VERSION = '0.9902';
-
 sub new {
     my ($class, $request, $group_id) = @_;
 

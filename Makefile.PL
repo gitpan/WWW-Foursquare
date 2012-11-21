@@ -24,7 +24,9 @@ WriteMakefile(
         'LWP::Protocol::https' => 0,
     },
     META_MERGE => {
+        keywords => [ qw/foursquare 4sq www-foursquare/ ],
         resources => {
+            homepage   => 'http://fxzuz.github.com/WWW-Foursquare',
             repository => 'https://github.com/fxzuz/WWW-Foursquare',
         },
     },

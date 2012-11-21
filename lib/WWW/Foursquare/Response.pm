@@ -3,8 +3,6 @@ package WWW::Foursquare::Response;
 use strict;
 use warnings;
 
-our $VERSION = '0.9902';
-
 use JSON;
 
 our %ERROR_TYPE = (

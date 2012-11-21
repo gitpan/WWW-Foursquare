@@ -3,8 +3,6 @@ package WWW::Foursquare::Config;
 use strict;
 use warnings;
 
-our $VERSION = '0.9902';
-
 use Exporter;
 our @ISA    = 'Exporter';
 our @EXPORT = qw($AUTH_CODE_ENDPOINT $ACCESS_TOKEN_ENDPOINT $API_ENDPOINT $API_VERSION);

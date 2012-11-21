@@ -3,8 +3,6 @@ package WWW::Foursquare::Settings;
 use strict;
 use warnings;
 
-our $VERSION = '0.9902';
-
 sub new {
     my ($class, $request, $setting_id) = @_;
 

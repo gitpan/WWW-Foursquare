@@ -3,8 +3,6 @@ package WWW::Foursquare::Pageupdates;
 use strict;
 use warnings;
 
-our $VERSION = '0.9902';
-
 sub new {
     my ($class, $request, $update_id) = @_;
 

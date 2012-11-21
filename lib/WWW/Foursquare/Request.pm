@@ -3,8 +3,6 @@ package WWW::Foursquare::Request;
 use strict;
 use warnings;
 
-our $VERSION = '0.9902';
-
 use WWW::Foursquare::Config;
 use WWW::Foursquare::Response;
 use LWP::UserAgent;
