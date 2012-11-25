@@ -1,5 +1,10 @@
 Revision history for WWW-Foursquare
 
+0.9904  26.11.2012 01:21
+        Add debug mode
+        Fix error with testing pod-coverage.t
+        Update documentation (add constructor new, debug mode)
+
 0.9903  21.11.2012 22:37
         Fix typo in documentation, add META.yml and META.json
 

@@ -36,9 +36,11 @@ sub GET {
     my $query      = $self->_params_to_str($params);
     my $result_url = sprintf "%s%s?%s", $API_ENDPOINT, $path, $query;
 
-    # to check which url we prepared for request
+    # debug request
+    $self->_debug('GET', $result_url) if $self->{debug};
+
+    # for testing url request
     return $result_url if $is_show_request;
-    warn $result_url   if $self->{debug};
 
     my $res = $self->{ua}->get($result_url);
     return $self->_response($res);
@@ -54,13 +56,15 @@ sub POST {
 
     my $query      = $self->_params_to_auth($params);
     my $result_url = sprintf "%s%s?%s", $API_ENDPOINT, $path, $query;
+    
+    # debug request
+    $self->_debug('POST', $result_url, $params) if $self->{debug};
 
     # for testing url request
     return $result_url if $is_show_request;
 
     # convert hash to array (because of LWP)
     my @params  = map { $_ => $params->{$_} } keys %$params;
-    warn $result_url if $self->{debug};
 
     my $res = $self->{ua}->post($result_url, Content_Type => 'form-data', Content => [ @params ]);
     return $self->_response($res);
@@ -115,6 +119,26 @@ sub _add_auth_to_params {
         $params->{oauth_token} = $self->{access_token};
     }
     $params->{v} = $API_VERSION;
+}
+
+sub _debug {
+    my ($self, $type, $url, $params) = @_;
+
+    my $param_text; 
+    for my $key ($params) {
+
+        my $value = $params->{$key} || '';
+        $param_text .= sprintf "[%s] = [%s]\n", $key, $value;
+    }
+    
+    warn "Request: $type";
+    warn "Url:     $url";
+
+    if ($type =~ /post/ && $param_text) {
+
+        warn "Params: "; 
+        warn $param_text;
+    }
 }
 
 sub _params_to_str {

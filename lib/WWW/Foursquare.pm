@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings FATAL => 'all';
 
-our $VERSION = '0.9903';
+our $VERSION = '0.9904';
 
 use WWW::Foursquare::Config;
 use WWW::Foursquare::Request;
@@ -81,12 +81,6 @@ sub set_access_token {
     $self->{request}->{userless}     = $access_token 
                                         ? 0 
                                         : 1; 
-}
-
-sub ua {
-    my ($self) = @_;
-
-    return $self->{request}->{ua};
 }
 
 sub users {
@@ -190,6 +184,13 @@ sub _get {
     die $res->content();
 }
 
+sub _ua {
+    my ($self) = @_;
+
+    return $self->{request}->{ua};
+}
+
+
 1;
 
 =head1 NAME
@@ -204,32 +205,32 @@ This document describes WWW::Foursquare version 0.9903
 
 =head1 SYNOPSIS
 
-    use WWW::Foursquare;
+use WWW::Foursquare;
+
+# Create fs object
+my $fs = WWW::Foursquare->new(
+    client_id     => 'client_id',
+    client_secret => 'client_secret',
+    redirect_uri  => 'redirect_uri',
+);
+
+# Set access_token
+my $access_token = 'XXXX';
+$fs->set_token($access_token);
+
+# Search users by name
+my $search_users = eval { $fs->users()->search(name => 'Pavel Vlasov') };
+
+if (not $@) {
     
-    # Create fs object
-    my $fs = WWW::Foursquare->new(
-        client_id     => 'client_id',
-        client_secret => 'client_secret',
-        redirect_uri  => 'redirect_uri',
-    );
+    # work with result in Perl structure
+    # print Dumper($search_users);
+}
+else {
 
-    # Set access_token
-    my $access_token = 'XXXX';
-    $fs->set_token($access_token);
-
-    # Search users by name
-    my $search_users = eval { $fs->users()->search(name => 'Pavel Vlasov') };
-   
-    if (not $@) {
-        
-        # work with result in Perl structure
-        # print Dumper($search_users);
-    }
-    else {
-
-        # process errors
-        warn $@ if $@;
-    }
+    # process errors
+    warn $@ if $@;
+}
 
 =cut
 
@@ -281,11 +282,23 @@ How to connect your apps with foursquare via OAuth 2.0.
 
 For more information I would recommend you visit page L<https://developer.foursquare.com/overview/auth>
 
+=head1 DEBUG MODE
+
+my $fs = WWW::Foursquare->new(
+    debug => 1,
+);
+
 =head1 METHODS
 
-If you want to use itself method for forsquare API:
+=head2 new
 
-$fs->users->info(); # get info about users etc
+Creating a new foursquare object.
+
+    my $fs = WWW::Foursquare->new(
+        client_id     => 'client_id',
+        client_secret => 'client_secret',
+        redirect_uri  => 'redirect_uri',
+    );
 
 =head2 get_auth_url
 
@@ -306,6 +319,10 @@ Set access token for foursquare object
 =head2 users
 
     All users methods: https://developer.foursquare.com/docs/users/users
+    
+    If you want to use itself method for forsquare API:
+
+    $fs->users->info(); # get info about users etc
 
 =head2 venues
 
