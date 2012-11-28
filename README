@@ -81,16 +81,32 @@ INTEGRATION
     For more information I would like recommend you visit page:
     https://developer.foursquare.com/overview/auth
 
+DEBUG MODE
+
+my $fs = WWW::Foursquare->new(
+    debug => 1,
+);
+
 METHODS
 
-    If you want to use itself method for forsquare API:
+    new
 
-    $fs->users->info(); # get info about users etc
+      Creating a new foursquare object.
+
+      my $fs = WWW::Foursquare->new(
+          client_id     => 'client_id',
+          client_secret => 'client_secret',
+          redirect_uri  => 'redirect_uri',
+      );
 
     get_auth_url
       Prepare auth url from Foursquare parameters (cliend_id, redirect_uri)
 
       my $auth_url = $fs->get_auth_url();
+
+      If you want to use itself method for forsquare API:
+
+      $fs->users->info(); # get info about users etc
 
     get_access_token
       Get code after redirect, and send GET request to fetch access token

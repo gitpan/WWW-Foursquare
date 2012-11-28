@@ -22,12 +22,12 @@ my $reg_auth_url = qr{^https://foursquare\.com/oauth2/authenticate\?client_id=.*
 ok($fs->get_auth_url() =~ $reg_auth_url, "get auth url");
 
 # 02 invalid grant
-mock_response($fs->ua(), 400, 'Bad Request', '{"error":"invalid_grant"}');
+mock_response($fs->_ua(), 400, 'Bad Request', '{"error":"invalid_grant"}');
 eval { my $token = $fs->get_access_token('test.code'); };
 ok($@, 'check oauth with invalid grant');
 
 # 03 get_access_token (need mock)
-mock_response($fs->ua(), 200, 'OK', '{"access_token":"12J1QZUPO5H3ZMIX1GS0RVNWTFMU1IP4HVC02DRFCIZP3OIV"}');
+mock_response($fs->_ua(), 200, 'OK', '{"access_token":"12J1QZUPO5H3ZMIX1GS0RVNWTFMU1IP4HVC02DRFCIZP3OIV"}');
 my $token = $fs->get_access_token('test.code');
 ok($token eq '12J1QZUPO5H3ZMIX1GS0RVNWTFMU1IP4HVC02DRFCIZP3OIV', 'get token from fs server');
 
