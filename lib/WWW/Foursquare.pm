@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings FATAL => 'all';
 
-our $VERSION = '0.9905';
+our $VERSION = '0.9906';
 
 use WWW::Foursquare::Config;
 use WWW::Foursquare::Request;
@@ -199,38 +199,38 @@ WWW::Foursquare - is a Perl wrapper for the Foursqauare API.
 
 =head1 VERSION
 
-This document describes WWW::Foursquare version 0.9905
+This document describes WWW::Foursquare version 0.9906
 
 =cut
 
 =head1 SYNOPSIS
 
-use WWW::Foursquare;
+    use WWW::Foursquare;
 
-# Create fs object
-my $fs = WWW::Foursquare->new(
-    client_id     => 'client_id',
-    client_secret => 'client_secret',
-    redirect_uri  => 'redirect_uri',
-);
+    # Create fs object
+    my $fs = WWW::Foursquare->new(
+        client_id     => 'client_id',
+        client_secret => 'client_secret',
+        redirect_uri  => 'redirect_uri',
+    );
 
-# Set access_token
-my $access_token = 'XXXX';
-$fs->set_token($access_token);
+    # Set access_token
+    my $access_token = 'XXXX';
+    $fs->set_token($access_token);
 
-# Search users by name
-my $search_users = eval { $fs->users()->search(name => 'Pavel Vlasov') };
+    # Search users by name
+    my $search_users = eval { $fs->users()->search(name => 'Pavel Vlasov') };
 
-if (not $@) {
+    if (not $@) {
     
-    # work with result in Perl structure
-    # print Dumper($search_users);
-}
-else {
+        # work with result in Perl structure
+        # print Dumper($search_users);
+    }
+    else {
 
-    # process errors
-    warn $@ if $@;
-}
+        # process errors
+        warn $@ if $@;
+    }
 
 =cut
 
@@ -245,9 +245,9 @@ How to connect your apps with foursquare via OAuth 2.0.
 
 =head2 1. Create foursquare app: 
 
-    https://foursquare.com/developers/apps
+https://foursquare.com/developers/apps
 
-    Get Client ID, Client Secret and Callback url
+Get Client ID, Client Secret and Callback url
 
     my $fs = WWW::Foursquare->new(
         client_id     => 'client_id',
@@ -262,19 +262,20 @@ How to connect your apps with foursquare via OAuth 2.0.
 
 =head2 3. Have a user authorize your app.
 
-    Implement callback in your server. 
+Implement callback in your server. 
 
-    - You click on auth url to go to autorize page. 
-    - If authorization is successful you will redirect to callback url and get code.
-    - Then you use this code for getting access_token for Foursquare API 
+- You click on auth url to go to autorize page. 
+- If authorization is successful you will redirect to callback url and get code.
+- Then you use this code for getting access_token for Foursquare API 
 
     http://your_server.com/callback&code=XXXXXXX
     my $code = ... # getting code here
 
-    Allow app to access to your account in foursquare
+Allow app to access to your account in foursquare
 
     my $access_token = $fs->get_access_token($code);
-    Background magic will send GET request to Foursquare API 
+
+Background magic will send GET request to Foursquare API 
 
 =head2 4. Set access_token and using Foursquare API
 
@@ -304,77 +305,79 @@ Creating a new foursquare object.
 
 Prepare auth url from Foursquare parameters (cliend_id, redirect_uri)
 
-my $auth_url = $fs->get_auth_url();
+    my $auth_url = $fs->get_auth_url();
 
 =head2 get_access_token
 
 Get code after redirect, and send GET request to fetch access token
 
-my $access_token = $fs->get_access_token($code);
+    my $access_token = $fs->get_access_token($code);
 
 =head2 set_access_token
-
+    
 Set access token for foursquare object
+
+    $fs->set_access_token($code);
 
 =head2 users
 
-    All users methods: https://developer.foursquare.com/docs/users/users
+All users methods: https://developer.foursquare.com/docs/users/users
     
-    If you want to use itself method for forsquare API:
+If you want to use itself method for forsquare API:
 
     $fs->users->info(); # get info about users etc
 
 =head2 venues
 
-    All venues methods: https://developer.foursquare.com/docs/venues/venues
+All venues methods: https://developer.foursquare.com/docs/venues/venues
 
 =head2 venuegroups
 
-    All venuegroups methods: https://developer.foursquare.com/docs/venuegroups/venuegroups
+All venuegroups methods: https://developer.foursquare.com/docs/venuegroups/venuegroups
 
 =head2 checkins
 
-    All checkins methods: https://developer.foursquare.com/docs/checkins/checkins
+All checkins methods: https://developer.foursquare.com/docs/checkins/checkins
 
 =head2 tips
 
-    All tips methods: https://developer.foursquare.com/docs/tips/tips
+All tips methods: https://developer.foursquare.com/docs/tips/tips
 
 =head2 lists
 
-    All lists methods: https://developer.foursquare.com/docs/lists/lists
+All lists methods: https://developer.foursquare.com/docs/lists/lists
 
 =head2 updates
 
-    All updates methods: https://developer.foursquare.com/docs/updates/updates
+All updates methods: https://developer.foursquare.com/docs/updates/updates
 
 =head2 photos
 
-    All photos methods: https://developer.foursquare.com/docs/photos/photos
+All photos methods: https://developer.foursquare.com/docs/photos/photos
 
 =head2 settings
     
-    All settings methods: https://developer.foursquare.com/docs/settings/settings
+All settings methods: https://developer.foursquare.com/docs/settings/settings
 
 =head2 specials
     
-    All specials methods: https://developer.foursquare.com/docs/specials/specials
+All specials methods: https://developer.foursquare.com/docs/specials/specials
 
 =head2 campaigns
 
-    All campaigns methods: https://developer.foursquare.com/docs/campaigns/campaigns
+All campaigns methods: https://developer.foursquare.com/docs/campaigns/campaigns
 
 =head2 events
 
-    All events methods: https://developer.foursquare.com/docs/events/events
+All events methods: https://developer.foursquare.com/docs/events/events
 
 =head2 pages
 
-    All pages methods: https://developer.foursquare.com/docs/pages/pages
+All pages methods: https://developer.foursquare.com/docs/pages/pages
 
 =head2 pageupdates
 
-    All pageupdates methods: https://developer.foursquare.com/docs/pageupdates/pageupdates
+All pageupdates methods: https://developer.foursquare.com/docs/pageupdates/pageupdates
 
 =head1 EXAMPLES
 
